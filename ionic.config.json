@@ -1,0 +1,7 @@
+{
+  "name": "act2avila",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

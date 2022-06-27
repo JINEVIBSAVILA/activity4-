@@ -1,0 +1,52 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-title><p aligned="center">
+      Contacts
+   </p> </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button (click)="addUser()">
+        <ion-icon slot="icon-only" name="add" size="large"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen class="component-content">
+<ion-accordion-group *ngFor="let contact of contactlist; let i = index">
+  <ion-accordion value="contacts">
+    <ion-item slot="header">
+      <ion-item-sliding>
+        <ion-item-options side="start">
+          <ion-item-option color="danger" (click)="confirmation(i)"><ion-icon size="large" name="trash"></ion-icon></ion-item-option>
+          <ion-item-option color="secondary" (click)="sendMessage(i)">  <ion-icon size="large" name="mail"></ion-icon></ion-item-option>
+        </ion-item-options>
+    
+        <ion-item>
+            <ion-thumbnail slot="start">
+            <img src="assets/1.jpg">
+            </ion-thumbnail>
+          <ion-label >{{ contact.name }}</ion-label>
+        </ion-item>
+    </ion-item-sliding>
+    </ion-item>
+
+    <ion-list slot="content">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          </ion-thumbnail>
+        <ion-label>{{ contact.address }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          </ion-thumbnail>
+        <ion-label >{{ contact.email }}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          </ion-thumbnail>
+        <ion-label>{{ contact.number }}</ion-label>
+      </ion-item>
+      
+    </ion-list>
+  </ion-accordion>
+  </ion-accordion-group>
